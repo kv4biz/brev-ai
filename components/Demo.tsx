@@ -88,7 +88,7 @@ const Demo = () => {
   return (
     <section className="mt-16 w-full max-w-xl">
       {/* Search Form */}
-      <div className="flex flex-col w-full gap-2">
+      <div className="flex flex-col w-full justify-center gap-2">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField
@@ -107,12 +107,14 @@ const Demo = () => {
                 </FormItem>
               )}
             />
-            <Button
-              type="submit"
-              className=" peer-focus:border-gray-700 peer-focus:text-gray-700"
-            >
-              Submit
-            </Button>
+            <div className="flex w-full justify-center mb-4">
+              <Button
+                type="submit"
+                className="w-full max-w-[240px] peer-focus:border-gray-700 peer-focus:text-gray-700"
+              >
+                Submit
+              </Button>
+            </div>
           </form>
         </Form>
 
