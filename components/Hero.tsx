@@ -19,7 +19,7 @@ const Hero = () => {
             variant="default"
             type="button"
             onClick={() =>
-              window.open("https://github.com/TidbitsJS/Summize", "_blank")
+              window.open("https://github.com/kv4biz/brev-ai", "_blank")
             }
             className="gap-4"
           >
