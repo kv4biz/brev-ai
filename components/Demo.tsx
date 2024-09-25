@@ -107,7 +107,7 @@ const Demo = () => {
                 </FormItem>
               )}
             />
-            <div className="flex w-full justify-center mb-4">
+            <div className="flex w-full justify-center">
               <Button
                 type="submit"
                 className="w-full max-w-[240px] peer-focus:border-gray-700 peer-focus:text-gray-700"
@@ -119,21 +119,24 @@ const Demo = () => {
         </Form>
 
         {/* Browse History */}
-        <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
+        <div className="flex flex-col gap-4 mt-4 max-h-60 overflow-y-auto">
           {allArticles.reverse().map((item, index) => (
             <div
               key={`link-${index}`}
-              className="p-3 flex justify-start items-center flex-row bg-white border border-gray-200 gap-3 rounded-lg cursor-pointer"
+              className="p-3 flex justify-start items-center flex-row gap-2 border bg-background border-gray-200 rounded-lg cursor-pointer"
               onClick={() => setArticle(item)}
             >
-              <div className="copy_btn" onClick={() => handleCopy(item.url)}>
+              <div
+                className="text-gray-400"
+                onClick={() => handleCopy(item.url)}
+              >
                 {copied === item.url ? (
                   <CheckCheck className="w-5 h-5" />
                 ) : (
                   <Copy className="w-5 h-5" />
                 )}
               </div>
-              <p className="flex-1 font-medium text-blue-700 text-sm truncate">
+              <p className="flex-1 font-medium text-rose-500 text-sm truncate">
                 {item.url}
               </p>
             </div>
@@ -150,11 +153,11 @@ const Demo = () => {
         ) : (
           article.summary && (
             <div className="flex flex-col gap-3">
-              <h2 className="text-xl font-bold text-gray-600">
+              <h2 className="text-xl font-bold text-foreground">
                 Article <span className="text-primary">Summary</span>
               </h2>
-              <div className="rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-4">
-                <p className="text-sm text-gray-700">{article.summary}</p>
+              <div className="rounded-xl border border-gray-200 bg-background/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-4">
+                <p className="text-sm text-foreground">{article.summary}</p>
               </div>
             </div>
           )
